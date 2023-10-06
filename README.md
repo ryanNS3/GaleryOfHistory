@@ -1,1 +1,1 @@
-# GaleryOfHistory
+# GalleryOfHistory
