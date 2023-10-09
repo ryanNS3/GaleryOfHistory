@@ -1,0 +1,330 @@
+
+
+
+.box-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.3rem;
+    margin-left: 0.5rem;
+}
+.section-obra{
+    position: relative;
+    max-height: 620px;
+    grid-column: 1/2;
+    
+}
+
+
+.section-obra .box-obra {
+    width: 95%;
+    height: 85%;
+}
+
+.section-obra .box-obra img{
+    border-radius: 10px;
+}
+.decoradorObra{
+    position: absolute;
+    top: 20px;
+    right: -18px;
+    border-radius: 10px;
+    border: 3px solid #6F4300;
+    z-index: -1;
+    width: 90% ;
+    height: 550px;
+    box-sizing: border-box;
+}
+
+.section-titulo{
+    display: flex;
+    grid-column: 2/4;
+    flex-direction: column;
+}
+
+.section-titulo h1{
+    position: relative;
+    color: #000;
+    font-family: 'Libre Baskerville';
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 5px;
+    margin: 0;
+}
+
+.section-titulo h1 span:first-child::after{
+    content: "";
+    position: absolute;
+    background-color: #FFA41D;
+    width: 0px;
+    height: 0px;
+    z-index: -999;
+    top: 55px ;
+    right: 0px;
+    animation: animacaoDecorador 1s forwards;
+
+}
+
+.section-titulo h1 span:first-child{
+    position: relative;
+    background-image: url("../../assets/grupo-Marcador.svg");
+    background-size: 220px 110px;
+    background-repeat: no-repeat;
+}
+
+
+.section-titulo h1 span:last-child{
+    color: #FFD390;
+}
+
+.tema-site{
+    background-color: #FFD390;
+    place-self : start;
+    border-radius: 10px; 
+}
+
+.tema-site p{
+    display: flex ;
+    padding: 0.3rem 1rem;
+    margin: 0;
+    color: #704300;
+
+    font-family: 'Libre Baskerville';
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+
+.button-movimentos{
+    display: flex;
+    position: relative;
+    margin-top: 1rem;
+    gap: 1rem;
+    
+}
+
+.link-movimentos{
+    position: relative;
+    padding: 0px;
+}
+
+.decoradorx::after{
+    content: "";
+ 
+    width: 10%;
+    height: 3px;
+    left: 1px;
+    background-color: #000;
+    position: absolute;
+    transition: ease-in-out 1s;
+    
+}
+
+.decoradorx::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 3px;
+    left: 250px;
+    background-color: #000000;
+    transition: ease-in-out 1s;
+    
+}
+
+.decoradory::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 30px;
+    background-color: #000;
+    left: 274px;
+    top: 24px;
+    transition: ease-in-out 1s;
+    
+}
+
+.decoradory::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 30px;
+    background-color: #000000;
+    left: -1px;
+    transition: ease-in-out 1s;
+
+}
+
+
+.decorador-button-movimentos{
+    display: block;
+    position: absolute;
+    width: 321px;
+    height: 70px;
+    border: 2px solid #000;
+    top: -6px;
+    left: 100px;
+}
+
+.link-movimentos {
+    place-self: start;
+    padding: 0.3rem 0.5rem;
+    color: #704300;
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+
+
+.button-seta{
+    position: relative;
+    align-self: end;
+    border: 0;
+    background-color: #ECECEC;
+    width: 54px;
+    height: 54px;
+
+
+}
+
+
+
+/* seta */
+.button-seta::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16.5px;
+    right: 12px;
+    padding: 8px;
+    box-shadow: 3.8px -3.8px 0px 0px #7A7A7A inset;
+    border: solid transparent;
+    border-width: 4px 4px 2px 2px;
+    rotate: 188deg;
+}
+/* linha da seta */
+.button-seta::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px;
+    right: 35px;
+    height: 50px;
+    width: 3.8px;
+    background-color: #7A7A7A;
+    rotate: 55deg;
+}
+
+
+.button-movimentos:hover{
+    .link-movimentos{
+        background-color: #f3f3f3;
+        color: rgb(0, 0, 0);
+        
+    }
+    .decoradorx::after{
+        width: 100%;
+    }
+
+    .decoradorx::before{
+        width: 100%;
+        left: 1px;
+    }
+
+    .decoradory::after{
+        height: 51px;
+        top: 4px
+
+    }
+    .decoradory::before{
+        height: 51px;
+
+    }
+
+}
+
+
+@keyframes animacaoDecorador{
+
+    0%{
+        left: 0px;
+        width: 0px;
+        height: 36px;
+
+    }
+    10%{
+       
+        left: 3px;
+        width: 26.5px;
+        height: 36px;
+    }
+
+
+
+    20%{
+        left: 5px;
+        width:53px;
+        height: 36px;
+    }
+
+    30%{
+        left : 6px;
+        width:79.5px;
+        height: 36px;
+
+    }
+
+    40%{
+        left : 6px;
+        width:106px;
+        height: 36px;
+    }
+
+    50%{
+        left : 6px;
+        width: 132px;
+        height: 36px;
+    }
+
+    60%{
+        left : 6px;
+        width: 159px;
+        height: 36px;
+
+    }
+
+    70%{
+        left : 6px;
+        width: 185.5px;
+        height: 36px;
+
+    }
+
+    80%{
+        left : 6px;
+        width: 213px;
+        height: 36px;
+
+    }
+
+    90%{
+        left : 6px;
+        width: 215.5px;
+        height: 36px;
+    }
+
+    100%{
+        left : 5px;
+        width: 220.5px;
+        height: 36px;
+
+    }
+}
