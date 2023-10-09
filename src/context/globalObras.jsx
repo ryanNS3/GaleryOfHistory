@@ -15,10 +15,10 @@ useEffect(()=>{
 }, [])
 
     dados ? setObras[dados] : setObras[null]
-    console.log(dados)
+    
    return(
     
-    <GlobalObras.Provider value={{obras,loading,erro}}>
+    <GlobalObras.Provider value={{dados,loading,erro}}>
         {children}
     </GlobalObras.Provider>
    )

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import NavBar from "./components/navBar/navBar"
 import Header from "./components/header/Header"
-
+import { MovimentosProvider } from "./context/globalMovi"
 import { ObrasProvider } from "./context/globalObras"
-import { movimentosProvider } from "./context/globalMovi"
+import Personalidades from "./components/section-personalidades/Personalidades"
+
 
 
 
@@ -13,10 +14,11 @@ function App() {
     return (
       <>
     
-        <movimentosProvider>
-          <NavBar />
-        </movimentosProvider>
+      <MovimentosProvider>
+        <NavBar />
 
+      </MovimentosProvider>
+      
       
         <ObrasProvider>
           <Header />
@@ -24,6 +26,7 @@ function App() {
         </ObrasProvider>
        
         <personProvider>
+          <Personalidades/>
         
         </personProvider>
 

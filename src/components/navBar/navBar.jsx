@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../navBar/style.css"
 import logo from "../../assets/logo.svg"
-
+import { GlobalMovimentos } from "../../context/globalMovi";
 function NavBar(){
 
+    const dados = useContext(GlobalMovimentos);
+
+
+
+ if (dados.dados !== null){
     return(
     <nav>
 
@@ -18,66 +23,31 @@ function NavBar(){
             </div>
         </div>
         
-        <ul className="box-lista">
-            <li className="box-botton">
-                <a href="#" className="link-menu">Romantismo</a>
-                <div className="seta"></div>
+        <ul className="box-lista" arai-aria-label="navegação primária">
+            {dados.dados.map((item) =>{
+                return(
+                    <li className="box-botton" key={item.nomeMovimento}>
+                        <a href="#" className="link-menu">{item.nomeMovimento}</a>
+                        <div className="seta"></div>
 
-                <ul className="drop-Menu">
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                </ul>
+                        <ul className="drop-Menu">
+                            <li><a href="/">aaaa</a></li>
+                            <li><a href="/">aaaa</a></li>
+                            <li><a href="/">aaaa</a></li>
+                        </ul>
 
-            </li>
+                    </li>
 
-            <li className="box-botton">
-                <a href="#" className="link-menu">Modernismo</a>
-                <div className="seta"></div>
-                <ul className="drop-Menu">
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                </ul>
-            </li>
+                )
+            })}
 
-            <li className="box-botton">
-                <a href="#" className="link-menu">Pós impressionismo</a>
-                <div className="seta"></div>
-                <ul className="drop-Menu">
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                </ul>
-            </li>
-
-            <li className="box-botton">
-                <a href="#" className="link-menu">Arte contemporânea</a>
-                <div className="seta"></div>
-                <ul className="drop-Menu">
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                </ul>
-            </li>
-
-            <li className="box-botton">
-                <a href="#" className="link-menu">Surrealismo</a>
-                <div className="seta"></div>
-                <ul className="drop-Menu">
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                    <li><a href="/">aaaa</a></li>
-                </ul>
-                
-            </li>
-            
         </ul>
     </nav>
 
     
 
     )
+}
    
 
 }

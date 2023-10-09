@@ -147,11 +147,11 @@ nav{
 }
 
 .box-botton::after{
+    content: "";
     display: block;
     position: absolute;
     top: 13px;
     left: -1px;
-    content: "";
     width: 0px;
     height: 3px;
     background-color: rgb(0, 0, 0);
