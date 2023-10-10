@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import "./app.css"
 import NavBar from "./components/navBar/navBar"
 import Header from "./components/header/Header"
 import { MovimentosProvider } from "./context/globalMovi"
@@ -14,20 +15,16 @@ function App() {
     return (
       <>
     
-      <MovimentosProvider>
-        <NavBar />
-
-      </MovimentosProvider>
-      
-      
+        <MovimentosProvider>
+          <NavBar />
+        </MovimentosProvider>
+        
         <ObrasProvider>
           <Header />
-      
         </ObrasProvider>
        
         <personProvider>
           <Personalidades/>
-        
         </personProvider>
 
   

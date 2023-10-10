@@ -29,7 +29,6 @@ function Header() {
 
                 <h1>Mergulhe nas principais <span>obras</span> da história<span>.</span></h1>
                 <div className="button-movimentos" aria-label="navegação secundária ">
-                    {/* <button className="button-seta"></button> */}
                     <a href="/" className="link-movimentos">Ir a movimentos
                         <span className="decoradorx"></span>
                         <span className="decoradory"></span>

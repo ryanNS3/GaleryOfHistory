@@ -1,0 +1,82 @@
+section{
+    border: 0;
+    padding: 0;
+}
+
+
+.box-personalidades{
+    display: flex;
+    position: relative;
+    margin-bottom: 3rem;
+    width: 90vw;
+
+}
+
+
+.titulo-perso{
+   
+    width: 65%;
+    padding: 7.5rem 0.5rem;
+    background-color: #2F2F2F;
+}
+
+.titulo-perso::before{
+    content: "";
+    background-image: url("../../assets/linhaDeco.svg");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+
+
+
+
+.titulo-perso h2{
+    color: #FFF;
+    font-family: Libre Baskerville;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 2.8rem;
+}
+
+
+.swiper{
+    position: absolute;
+    background-color: #4E4E4E;
+
+    padding: 1rem;
+    width: 750px;
+    height: 250px;
+    top: 40px;
+    right: 100px;
+}
+
+.swiper-slide{
+    padding: 1rem;
+}
+
+.box-img-perso{
+    position: relative;
+}
+
+.decorador-perso::after{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 5px;
+    height: 25px;
+    background-color: #2F2F2F;
+    top: 149px;
+    left: 72px;
+}
+
+.box-img-perso p{
+    background-color: #606060;
+    color: #ffff;
+    padding: 0.5rem;
+    margin-left: 1.3rem;
+    text-align: center;
+}
