@@ -16,48 +16,100 @@ section{
 
 .titulo-perso{
     position: relative;
-    padding: 7.5rem 13.5rem;
-    background-color: #2F2F2F;
+    padding: 6.8rem 2.8rem;
+    background-color: #282828;
+    width: 65%;
 }
-
-.titulo-perso::before{
-    content: "";
-    background-image: url("../../assets/linhaDeco.svg");
-    background-size: contain;
-    width: 30px;
-    height: 30px;
-    background-repeat: no-repeat;
-}
-
 
 
 
 .titulo-perso h2{
     color: #FFF;
     font-family: Libre Baskerville;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
    
 }
+.linha-deco{
+    position: absolute;
+    top: 180px;
+}
+
+.circulo-deco{
+    position: absolute;
+    top: 95px;
+    left: 7px;
+
+}
 
 .carroussel{
     cursor: grab;
     overflow: hidden;
+    position: absolute;
+    background-color: #4E4E4E;
+    /* width: 782px; */
+    width: 77.5%;
+    height: 90%;
+    left: 480px;
+    top: 20px;
+   
     
 }
 
 .innerCarroussel{
     display: flex;
+    justify-items: center;
+    margin-left: 2.8rem;
 }
 
 .item{
-    min-height: 200px;
-    min-width: 400px;
-    padding: 14px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    min-height: 210px;
+    min-width: 210px;
+    padding: 1rem;
+    justify-self: center;
+
+   
+}
+
+.item img{
+   
+
+    width: 142px;
+    height: 142.095px;
+    border: 7px solid #a1a1a1;
+    justify-self: center;
+    border-radius: 100%;
+    pointer-events: none;
+   
+    
     
 }
 
 
+.nomeArtista::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 45px;
+    background-color: #2F2F2F;
+    left: 97px;
+    top: 172px;
+}
+
+
+.nomeArtista{
+    color: #d7d7d7;
+    background-color: #606060;
+    padding: 0.2rem;
+    max-width: 180px;
+    font-size: 1.2rem;
+    margin-top: 2.8rem;
+    text-align: center;
+    
+}
 

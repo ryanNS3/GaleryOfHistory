@@ -4,9 +4,9 @@ import logo from "../../assets/logo.svg"
 import { GlobalMovimentos } from "../../context/globalMovi";
 function NavBar(){
 
-    const dados = useContext(GlobalMovimentos);
+ const dados = useContext(GlobalMovimentos);
 
-
+    console.log(dados.dados)
 
  if (dados.dados !== null){
     return(
@@ -18,7 +18,7 @@ function NavBar(){
 
             </div>
             <div>
-                <span>Gallery of hisitory</span>
+                <span>Gallery of history</span>
                 
             </div>
         </div>
@@ -31,9 +31,12 @@ function NavBar(){
                         <div className="seta"></div>
 
                         <ul className="drop-Menu">
-                            <li><a href="/">aaaa</a></li>
-                            <li><a href="/">aaaa</a></li>
-                            <li><a href="/">aaaa</a></li>
+                            {item.obras.map((obras) =>{
+                                return(
+                                    <li><a href="#">{obras.nomeObra}</a></li>
+
+                                )
+                            })}
                         </ul>
 
                     </li>

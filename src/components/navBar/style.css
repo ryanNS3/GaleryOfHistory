@@ -113,6 +113,7 @@ nav{
     position: absolute;
     display: none;
     flex-wrap: wrap;
+    flex-direction: column;
     top: 50px;
     place-items: start;
     gap: 0.5rem;

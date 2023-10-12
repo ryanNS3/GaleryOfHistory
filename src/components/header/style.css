@@ -107,6 +107,7 @@
     position: relative;
     margin-top: 1rem;
     gap: 1rem;
+    max-width: 30%;
     
 }
 
