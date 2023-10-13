@@ -118,7 +118,8 @@ nav{
     place-items: start;
     gap: 0.5rem;
     border-radius: 10px;
-    background-color: #f3f3f3;
+    background-color: #ffffff55;
+    backdrop-filter: blur(5px);
     z-index: 200;
     padding: 0.5rem;
 
@@ -130,7 +131,7 @@ nav{
 
 }
 .drop-Menu li a:hover{
-    color: #d3a200;
+    color: #816300;
 }
 
 
@@ -168,6 +169,7 @@ nav{
     &::before{height: 30px; };
     .drop-Menu{
         display: flex;
+        
     }
 
 
@@ -201,3 +203,16 @@ nav{
 
 @keyframes animacaoSeta1{from {top:5px}   to {top:18px}}
 @keyframes animacaoSeta{from  {top: 0px;} to {top:15px;}}
+
+
+
+@media (min-width: 1600px){
+    .link-menu{
+        font-size: 1.8rem;
+    }
+    
+    .drop-Menu li a{
+        font-size: 1.5rem;
+
+    }
+}

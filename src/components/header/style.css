@@ -3,16 +3,13 @@
 
 .box-header{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr  1fr;
     gap: 2.3rem;
     margin-left: 0.5rem;
-    margin-bottom: 13rem;
+    margin-bottom: 15rem;
 }
 .section-obra{
     position: relative;
-    max-height: 620px;
-    grid-column: 1/2;
-    
 }
 
 
@@ -24,6 +21,8 @@
 
 .section-obra .box-obra img{
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .decoradorObra{
@@ -34,14 +33,16 @@
     border: 3px solid #6F4300;
     z-index: -1;
     width: 90% ;
-    height: 550px;
+    height: 100%;
     box-sizing: border-box;
 }
 
 .section-titulo{
     display: flex;
-    grid-column: 2/4;
+    grid-column: 2/-1;
     flex-direction: column;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .section-titulo h1{
@@ -255,80 +256,54 @@
 
 }
 
-
 @keyframes animacaoDecorador{
 
-    0%{
-        left: 0px;
-        width: 0px;
-        height: 36px;
-
-    }
-    10%{
+    from{
+        left : 6px;
+        width: 0%;
+        height: 40px;
        
-        left: 3px;
-        width: 26.5px;
-        height: 36px;
+
     }
 
 
-
-    20%{
-        left: 5px;
-        width:53px;
-        height: 36px;
-    }
-
-    30%{
+    to{
         left : 6px;
-        width:79.5px;
-        height: 36px;
+        width: 100%;
+        height: 35%;
+        top: 50%
 
     }
+}
 
-    40%{
-        left : 6px;
-        width:106px;
-        height: 36px;
+
+
+/* responsivo */
+
+@media(min-width:1500px){
+    .section-titulo h1{
+        font-size: 6rem;
+        transition: 0.4s;     
     }
 
-    50%{
-        left : 6px;
-        width: 132px;
-        height: 36px;
+    .section-titulo h1 span:first-child{
+        background-size: 270px 130px;
+       
     }
 
-    60%{
-        left : 6px;
-        width: 159px;
-        height: 36px;
+    
+}
 
+@media (min-width:1800px){
+    .section-titulo h1{
+        font-size: 8rem;
+        transition: 0.6s;     
+    }
+    .section-titulo h1 span:first-child{
+        background-size: 355px 170px;  
     }
 
-    70%{
-        left : 6px;
-        width: 185.5px;
-        height: 36px;
 
-    }
+   
 
-    80%{
-        left : 6px;
-        width: 213px;
-        height: 36px;
-
-    }
-
-    90%{
-        left : 6px;
-        width: 215.5px;
-        height: 36px;
-    }
-
-    100%{
-        left : 5px;
-        width: 220.5px;
-        height: 36px;
-
-    }
 }
