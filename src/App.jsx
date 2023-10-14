@@ -6,6 +6,7 @@ import { ObrasProvider } from "./context/globalObras"
 import { PersonProvider } from "./context/globalPerson"
 import Personalidades from "./components/section-personalidades/Personalidades"
 import "./app.css"
+import Rota from "./routes/route"
 
 
 
@@ -16,17 +17,7 @@ function App() {
     return (
       <>
     
-        <MovimentosProvider>
-          <NavBar />
-        </MovimentosProvider>
-        
-        <ObrasProvider>
-          <Header />
-        </ObrasProvider>
-       
-        <PersonProvider>
-          <Personalidades/>
-        </PersonProvider>
+       <Rota />
 
   
       </>

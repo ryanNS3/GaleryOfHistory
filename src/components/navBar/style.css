@@ -123,6 +123,7 @@ nav{
     z-index: 200;
     padding: 0.5rem;
 
+
 }
 
 
@@ -169,6 +170,7 @@ nav{
     &::before{height: 30px; };
     .drop-Menu{
         display: flex;
+      
         
     }
 

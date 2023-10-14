@@ -1,14 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import "../navBar/style.css"
 import logo from "../../assets/logo.svg"
 import { GlobalMovimentos } from "../../context/globalMovi";
+
+
+import { Link, useNavigate } from "react-router-dom";
+import { GlobalObras } from "../../context/globalObras";
+
 function NavBar(){
+    const dados = useContext(GlobalMovimentos);
+    const obras = useContext(GlobalObras)
+    const contentLink = useRef()
+    const navigate = useNavigate()
 
- const dados = useContext(GlobalMovimentos);
+    function handleClick(event){
+        console.log(event.target.innerText)
+        console.log(obras.item)
+        obras.setItem(event.target.innerText)
+      
+        
+    }
 
+
+    
+
+    
+if (dados.dados !== null){
     console.log(dados.dados)
 
- if (dados.dados !== null){
+
     return(
     <nav>
 
@@ -24,16 +44,18 @@ function NavBar(){
         </div>
         
         <ul className="box-lista" arai-aria-label="navegação primária">
-            {dados.dados.map((item) =>{
+            {dados.dados.map((item,index) =>{
                 return(
                     <li className="box-botton" key={item.nomeMovimento}>
-                        <a href="#" className="link-menu">{item.nomeMovimento}</a>
+                        <Link to={"/"} className="link-menu" key={index}>{item.nomeMovimento}</Link>
                         <div className="seta"></div>
 
                         <ul className="drop-Menu">
                             {item.obras.map((obras) =>{
                                 return(
-                                    <li><a href="#">{obras.nomeObra}</a></li>
+                                    <li >
+                                        <Link onClick={handleClick} to={"obra"} key={item.nomeObra}  >{obras.nomeObra}</Link>
+                                    </li>
 
                                 )
                             })}

@@ -4,8 +4,9 @@ import "../section-personalidades/style.css"
 
 import linhaPerso from "../../assets/linhaPerso.svg"
 import circuloPerso from "../../assets/circuloPerso.svg"
+
 // importando o motion
-import { motion } from "framer-motion";
+import { motion, useAnimate  } from "framer-motion";
 // importando a varivael global
 import { GlobalPerson } from "../../context/globalPerson";
 
@@ -14,8 +15,8 @@ function Personalidades(){
     // referencia para obter o valor da largura do elemento
     const carroussel = React.useRef()
     const [width, setwidth] = React.useState(0)
-
-
+// animação
+ 
     // calculando a largura do scroll menos a largura total do carrossel
     React.useEffect(() =>{
         setwidth(carroussel.current?.scrollWidth - carroussel.current?.offsetWidth)
@@ -24,9 +25,10 @@ function Personalidades(){
   
 if (dados.dados != null){
     return(
+        
         <section className="box-personalidades">
 
-            <motion.article className="titulo-perso" >
+            <motion.article className="titulo-perso"  >
                 <span className="linha-deco">
                     <img src={linhaPerso} alt="decoração de escrita" />
                 </span>
@@ -42,7 +44,9 @@ if (dados.dados != null){
 
                 <motion.article className="innerCarroussel"  
                 drag="x" 
-                dragConstraints={{right: 0, left: -width}}>
+                dragConstraints={{right: 0, left: -width}}
+                
+                >
 
                     {dados.dados.map((item,index) =>{
                         return(
