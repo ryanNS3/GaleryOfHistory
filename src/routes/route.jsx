@@ -6,8 +6,9 @@ import { PersonProvider } from "../context/globalPerson";
 import NavBar from "../components/navBar/navBar";
 import Header from "../components/header/Header";
 import Personalidades from "../components/section-personalidades/Personalidades";
-import Erro from "../components/error/error";
+
 import { AnimatePresence } from "framer-motion";
+import Erro404 from "../components/error/error404";
 
 
 const Rota = () =>{
@@ -18,10 +19,10 @@ const Rota = () =>{
 
                 <Route path="obra" element={
                     <MovimentosProvider>
-                    <ObrasProvider>
-                        <Obra />
-                    </ObrasProvider>
-                </MovimentosProvider>
+                        <ObrasProvider>
+                            <Obra />
+                        </ObrasProvider>
+                    </MovimentosProvider>
                 
                 }/>
 
@@ -46,7 +47,7 @@ const Rota = () =>{
                 </>
             }
                 />
-            <Route path="*" element={<Erro/>}/>
+            <Route path="*" element={<Erro404/>}/>
 
         </Routes>
     </BrowserRouter>

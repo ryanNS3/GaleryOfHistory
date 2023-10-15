@@ -12,14 +12,13 @@ import Rota from "./routes/route"
 
 
 
+
 function App() {
 
     return (
       <>
     
        <Rota />
-
-  
       </>
     )
    }

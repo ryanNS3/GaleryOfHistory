@@ -9,13 +9,14 @@ import circuloPerso from "../../assets/circuloPerso.svg"
 import { motion, useAnimate  } from "framer-motion";
 // importando a varivael global
 import { GlobalPerson } from "../../context/globalPerson";
+import Loading from "../loading/loading";
+import Erro from "../error/error";
 
 function Personalidades(){
     const dados = React.useContext(GlobalPerson)
     // referencia para obter o valor da largura do elemento
     const carroussel = React.useRef()
     const [width, setwidth] = React.useState(0)
-// animação
  
     // calculando a largura do scroll menos a largura total do carrossel
     React.useEffect(() =>{
@@ -32,10 +33,13 @@ if (dados.dados != null){
                 <span className="linha-deco">
                     <img src={linhaPerso} alt="decoração de escrita" />
                 </span>
-                 <h2>Personalidades</h2>
-                 <span className="circulo-deco">
+
+                <h2>Personalidades</h2>
+
+                <span className="circulo-deco">
                     <img src={circuloPerso} alt="decoração de circulo" />
-                 </span>
+                </span>
+
             </motion.article>
 
             <motion.article className="carroussel"  
@@ -75,15 +79,14 @@ if (dados.dados != null){
 
 else  if (dados.loading){
     return(
-        <div>
-            <p>Carregando</p>
-        </div>
+       <Loading />
     )
 }
 
-else{
+
+else if (dados.erro){
     return(
-        <div>{dados.erro}</div>
+        <Erro />
     )
 }
     

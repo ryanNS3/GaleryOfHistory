@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext} from "react";
 import "../navBar/style.css"
 import logo from "../../assets/logo.svg"
 import { GlobalMovimentos } from "../../context/globalMovi";
@@ -6,35 +6,30 @@ import { GlobalMovimentos } from "../../context/globalMovi";
 
 import { Link, useNavigate } from "react-router-dom";
 import { GlobalObras } from "../../context/globalObras";
+import Loading from "../loading/loading";
+import Erro from "../error/error";
+import useMedia from "../../customHooks/useMedia";
 
 function NavBar(){
+    // contexto
     const dados = useContext(GlobalMovimentos);
     const obras = useContext(GlobalObras)
-    const contentLink = useRef()
-    const navigate = useNavigate()
+
+    // menu mobile
+    const mobile = useMedia("(max-width: 900px)")
+    const [ativoMenu,setAtivoMenu] = React.useState(false)
 
     function handleClick(event){
-        console.log(event.target.innerText)
-        console.log(obras.item)
         obras.setItem(event.target.innerText)
-      
-        
     }
 
-
-    
-
-    
 if (dados.dados !== null){
-    console.log(dados.dados)
-
-
     return(
     <nav>
 
         <div className="logotipo">
             <div className="imagem">
-                <img src={logo} alt="" />
+                <img src={logo} alt="imagem da logo gallery of history" />
 
             </div>
             <div>
@@ -42,18 +37,22 @@ if (dados.dados !== null){
                 
             </div>
         </div>
+        {mobile &&
+         <button onClick={(() => setAtivoMenu(!ativoMenu))} className={`${"botaoMobile"}  ${ativoMenu && "botaoAtivo"}`}></button>
+         }
         
-        <ul className="box-lista" arai-aria-label="navegação primária">
+        <ul className={`${mobile ? "box-lista-mobile" : "box-lista"} ${ativoMenu && "navMobileAtivo"}`} aria-label="navegação primária">
+
             {dados.dados.map((item,index) =>{
                 return(
                     <li className="box-botton" key={item.nomeMovimento}>
-                        <Link to={"/"} className="link-menu" key={index}>{item.nomeMovimento}</Link>
+                        <Link to={"/"} className="link-menu" >{item.nomeMovimento}</Link>
                         <div className="seta"></div>
 
-                        <ul className="drop-Menu">
+                        <ul className="drop-Menu" key={index}>
                             {item.obras.map((obras) =>{
                                 return(
-                                    <li >
+                                    <li>
                                         <Link onClick={handleClick} to={"obra"} key={item.nomeObra}  >{obras.nomeObra}</Link>
                                     </li>
 
@@ -73,7 +72,19 @@ if (dados.dados !== null){
 
     )
 }
-   
+
+else if (dados.loading){
+    return(
+        <Loading />
+
+    )
+}
+
+else if (dados.erro){
+    return(
+        <Erro />
+    )
+}
 
 }
 

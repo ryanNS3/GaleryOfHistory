@@ -3,38 +3,58 @@
 
 .box-header{
     display: grid;
-    grid-template-columns: 1fr 1fr  1fr;
-    gap: 2.3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    
     margin-left: 0.5rem;
-    margin-bottom: 15rem;
+    margin-bottom: 3rem;
 }
-.section-obra{
+
+
+.swiper {
+    max-width: 550px;
+    height: 88%;
+    grid-column: 1/2;
+  }
+  
+  .swiper-slide {
+    max-width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-
-.section-obra .box-obra {
-    width: 95%;
-    height: 100%;
-
-}
-
-.section-obra .box-obra img{
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
+.swiper-slide img {
+    display: block;
+    width: 85%;
+    height: 70%;
     object-fit: cover;
-}
+    border-radius: 10px;
+  }
+  
+
+
 .decoradorObra{
     position: absolute;
     top: 20px;
-    right: -18px;
+    left: 20px;
     border-radius: 10px;
     border: 3px solid #6F4300;
     z-index: -1;
     width: 90% ;
-    height: 100%;
+    height: 72%;
     box-sizing: border-box;
+}
+
+.nomeObra{
+    position: relative;
+    background-color: #3a3a3a;
+    /* border: solid 3px #ffffff; */
+    padding: 1rem;
+    top: -8%;
+    color: #ffffff;
+    z-index: 99999;
 }
 
 .section-titulo{
@@ -43,18 +63,20 @@
     flex-direction: column;
     max-height: 100%;
     max-width: 100%;
+    gap: 25px;
+
 }
 
 .section-titulo h1{
     position: relative;
     color: #000;
     font-family: 'Libre Baskerville';
-    font-size: 5rem;
+    font-size: 5.1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 5px;
     margin: 0;
+   
 }
 
 .section-titulo h1 span:first-child::after{
@@ -121,7 +143,7 @@
     content: "";
  
     width: 10%;
-    height: 3px;
+    height: 4px;
     left: 1px;
     background-color: #000;
     position: absolute;
@@ -134,8 +156,8 @@
     display: block;
     position: absolute;
     width: 10%;
-    height: 3px;
-    left: 250px;
+    height: 4px;
+    left: 247px;
     background-color: #000000;
     transition: ease-in-out 0.6s;
     
@@ -144,11 +166,11 @@
 .decoradory::after{
     content: "";
     position: absolute;
-    width: 3px;
-    height: 30px;
+    width: 1.3%;
+    height: 33px;
     background-color: #000;
-    left: 274px;
-    top: 24px;
+    left: 275px;
+    top: 23px;
     transition: ease-in-out 0.6s;
     
 }
@@ -156,8 +178,8 @@
 .decoradory::before{
     content: "";
     position: absolute;
-    width: 3px;
-    height: 30px;
+    width: 1.3%;
+    height: 33px;
     background-color: #000000;
     left: -1px;
     transition: ease-in-out 0.6s;
@@ -176,7 +198,7 @@
 }
 
 .link-movimentos {
-    place-self: start;
+    /* place-self: start; */
     padding: 0.3rem 0.5rem;
     color: #704300;
     font-family: 'Poppins';
@@ -189,44 +211,7 @@
 
 
 
-.button-seta{
-    position: relative;
-    align-self: end;
-    border: 0;
-    background-color: #ECECEC;
-    width: 54px;
-    height: 54px;
 
-
-}
-
-
-
-/* seta */
-.button-seta::after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 16.5px;
-    right: 12px;
-    padding: 8px;
-    box-shadow: 3.8px -3.8px 0px 0px #7A7A7A inset;
-    border: solid transparent;
-    border-width: 4px 4px 2px 2px;
-    rotate: 188deg;
-}
-/* linha da seta */
-.button-seta::before{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 11px;
-    right: 35px;
-    height: 50px;
-    width: 3.8px;
-    background-color: #7A7A7A;
-    rotate: 55deg;
-}
 
 
 .button-movimentos:hover{
@@ -246,12 +231,13 @@
     }
 
     .decoradory::after{
-        height: 51px;
-        top: 4px
-
+        height: 52px;
+        top: 4.5px
+        
     }
     .decoradory::before{
-        height: 51px;
+        height: 52px;
+        top: 4.5px;
 
     }
 
@@ -281,19 +267,6 @@
 
 /* responsivo */
 
-@media(min-width:1500px){
-    .section-titulo h1{
-        font-size: 6rem;
-        transition: 0.4s;     
-    }
-
-    .section-titulo h1 span:first-child{
-        background-size: 270px 130px;
-       
-    }
-
-    
-}
 
 @media (min-width:1800px){
     .section-titulo h1{
@@ -306,5 +279,79 @@
 
 
    
+
+}
+
+@media(min-width:1500px){
+    .section-titulo h1{
+        font-size: 7rem;
+        transition: 0.4s;     
+    }
+
+    .section-titulo h1 span:first-child{
+        background-size: 270px 130px;
+       
+    }
+    
+}
+
+@media(max-width: 1000px){
+    
+    .box-header{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .section-titulo{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .section-titulo h1{
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        transition: 0.4s;     
+    }
+    
+    .section-titulo h1 span:first-child{
+        background-size: 350px 500px;
+       
+    }
+    
+    
+    .swiper {
+        max-width: 550px;
+        height: 90%;
+        grid-column: 1/2;
+        margin-top: 1rem;
+    }
+    
+    .section-titulo h1 span:first-child{
+        background-size: 138px 68px;
+        
+    }
+    
+}
+
+
+@media(max-width: 590px){
+    .swiper {
+        max-width: 250px;
+        height: 90%;
+        grid-column: 1/2;
+        margin-top: 1rem;
+        justify-content: start;
+    }
+    .section-titulo h1{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        transition: 0.4s;     
+    }
+       
+    .section-titulo h1 span:first-child{
+        background-size: 90px 40px;
+           
+    }
+        
+    
+    
 
 }

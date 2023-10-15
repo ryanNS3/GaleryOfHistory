@@ -126,7 +126,7 @@ section{
         
     }
     .titulo-perso{
-        width: 40%;
+        width: 70%;
         padding: 1rem;
     }
     .linha-deco{
@@ -137,7 +137,7 @@ section{
         font-size: 1.8rem;
     }
     .circulo-deco{
-        top: 10%;
+        display: none;
        
     }
     .circulo-deco img{

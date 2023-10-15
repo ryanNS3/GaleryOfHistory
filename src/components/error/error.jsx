@@ -3,7 +3,7 @@ import React from "react";
 
 const Erro = () =>{
     return(
-        <h1>Página não encontrada</h1>
+        <h1>Ocorreu algum erro ao carregar</h1>
     )
 }
 
