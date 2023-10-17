@@ -17,7 +17,7 @@ const Rota = () =>{
         <BrowserRouter>
             <Routes>
 
-                <Route path="obra" element={
+                <Route path="obra/:id" element={
                     <MovimentosProvider>
                         <ObrasProvider>
                             <Obra />

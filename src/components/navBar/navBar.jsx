@@ -1,11 +1,12 @@
 import React, { useContext} from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import "../navBar/style.css"
 import logo from "../../assets/logo.svg"
+
 import { GlobalMovimentos } from "../../context/globalMovi";
-
-
-import { Link, useNavigate } from "react-router-dom";
 import { GlobalObras } from "../../context/globalObras";
+
 import Loading from "../loading/loading";
 import Erro from "../error/error";
 import useMedia from "../../customHooks/useMedia";
@@ -25,6 +26,7 @@ function NavBar(){
 
 if (dados.dados !== null){
     return(
+
     <nav>
 
         <div className="logotipo">
@@ -32,14 +34,16 @@ if (dados.dados !== null){
                 <img src={logo} alt="imagem da logo gallery of history" />
 
             </div>
+
             <div>
                 <span>Gallery of history</span>
-                
             </div>
+
         </div>
+
         {mobile &&
          <button onClick={(() => setAtivoMenu(!ativoMenu))} className={`${"botaoMobile"}  ${ativoMenu && "botaoAtivo"}`}></button>
-         }
+        }
         
         <ul className={`${mobile ? "box-lista-mobile" : "box-lista"} ${ativoMenu && "navMobileAtivo"}`} aria-label="navegação primária">
 
@@ -53,7 +57,7 @@ if (dados.dados !== null){
                             {item.obras.map((obras) =>{
                                 return(
                                     <li>
-                                        <Link onClick={handleClick} to={"obra"} key={item.nomeObra}  >{obras.nomeObra}</Link>
+                                        <Link onClick={handleClick} to={`obra/${obras.nomeObra}`} key={item.nomeObra}  >{obras.nomeObra}</Link>
                                     </li>
 
                                 )
