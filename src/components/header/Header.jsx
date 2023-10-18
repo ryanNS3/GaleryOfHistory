@@ -4,33 +4,28 @@ import "../header/style.css"
 import { Link, animateScroll as scroll } from "react-scroll";
 
 // importando a biblioteca de anumação aos
-import "aos"
-import Aos from "aos";
+
 
 // importando a biblioteca de slides
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 import { GlobalObras } from "../../context/globalObras";
 import Loading from "../loading/loading";
 import Erro from "../error/error";
 
 function Header() {
-    Aos.init()
     const dados = useContext(GlobalObras)
     console.log(dados.dados)
 
     if (dados.dados != null){
         return(
-            <header className="box-header "
-            data-aos="fade-right"
-            data-aos-anchor="#example-anchor"
-            data-aos-offset="500"
-            data-aos-duration="1500">
-                 <Swiper
+            <header className="box-header  animacaoEsquerda">
+                 <Swiper aria-label="carroussel de imagens "
                     spaceBetween={30}
                     centeredSlides={true}
                     // direction={'vertical'}
@@ -49,7 +44,7 @@ function Header() {
                     {dados.dados.map((item,index) =>{
                         return(
                             <SwiperSlide key={index}>
-                                <img src={item.linkFoto} alt={`${item.nomeObra}`} />
+                                <img src={item.linkFoto} alt={`imagem da obra ${item.nomeObra}`} />
                                 <span className="nomeObra">{item.nomeObra}</span>
             
                             </SwiperSlide>
@@ -60,14 +55,14 @@ function Header() {
                    
                 </Swiper>
     
-                <section className="section-titulo">
+                <section className="section-titulo" aria-labelledby="titulo-principal">
     
                     <div className="tema-site">
                         <p>Artes</p>
                     </div>
     
-                    <h1>Mergulhe nas principais <span>obras</span> da história<span>.</span></h1>
-                    <div className="button-movimentos" aria-label="navegação secundária ">
+                    <h1 id="titulo-principal">Mergulhe nas principais <span>obras</span> da história<span>.</span></h1>
+                    <button className="button-movimentos" aria-label="navegação ir a movimentos ">
                         <Link className="link-movimentos"
                         activeClass="active"
                         to="box-personalidades"
@@ -83,7 +78,7 @@ function Header() {
                         
                         
                         </Link>
-                    </div>
+                    </button>
 
                 </section>
                 

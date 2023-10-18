@@ -5,7 +5,7 @@ const Obra = () =>{
     console.log(dados.item)
     console.log(dados.dados)
     return(
-        <div>
+        <div className="animacaoEsquerda">
             <p>obra: {dados.item}</p>
         </div>
     )

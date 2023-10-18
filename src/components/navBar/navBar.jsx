@@ -20,6 +20,7 @@ function NavBar(){
     const mobile = useMedia("(max-width: 900px)")
     const [ativoMenu,setAtivoMenu] = React.useState(false)
 
+    // obtendo o valor do item do drop menu para fazer a requisição
     function handleClick(event){
         obras.setItem(event.target.innerText)
     }

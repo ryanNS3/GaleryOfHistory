@@ -88,7 +88,7 @@
     z-index: -999;
     top: 55px ;
     right: 0px;
-    animation: animacaoDecorador 1s forwards;
+    animation: animacaoDecorador 0.5s forwards;
 
 }
 
@@ -248,7 +248,7 @@
     from{
         left : 6px;
         width: 0%;
-        height: 40px;
+        height: 0%;
        
 
     }
@@ -347,7 +347,7 @@
     }
        
     .section-titulo h1 span:first-child{
-        background-size: 90px 40px;
+        background-size: 135px 60px;
            
     }
         

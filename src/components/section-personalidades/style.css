@@ -9,7 +9,7 @@ section{
     position: relative;
     margin-bottom: 3rem;
     max-width: 80%;
-   
+    
 
 }
 
@@ -18,7 +18,14 @@ section{
     position: relative;
     padding: 6.8rem 2.8rem;
     background-color: #282828;
-    width: 65%;
+    /* propreidades iniciais para a animação */
+    width: 0%;
+    opacity: 0;
+    animation-name: animacaotitle;
+    animation-duration: 0.8s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+   
 }
 
 
@@ -53,7 +60,13 @@ section{
     height: 90%;
     left: 50%;
     top: 20px;
-   
+    transform: translateX(50px);
+    opacity: 0;
+    animation-name: animacaoCarroussel;
+    animation-duration: 0.3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
     
 }
 
@@ -61,6 +74,7 @@ section{
     display: flex;
     justify-items: center;
     margin-left: 2.8rem;
+   
 }
 
 .item{
@@ -149,6 +163,20 @@ section{
        width: 100%;
        height: 80%;
        
+    }
+}
+
+@keyframes animacaotitle{
+    to{
+        width: 65%;
+        opacity: 1;
+    }
+}
+
+@keyframes animacaoCarroussel{
+    to{
+        transform: initial;
+        opacity: 1;
     }
 }
 
