@@ -16,8 +16,9 @@ export const ObrasProvider = ({children}) =>{
 
     function handleClick({target}){
         setItem(target.innerText)
+        console.log(obras.setItem(target.innerText))
+        
     }
-    
     if(item !== null){
         useEffect(()=>{
             

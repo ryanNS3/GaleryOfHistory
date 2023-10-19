@@ -289,7 +289,7 @@ nav{
 }
 
 .box-lista-mobile{
-    display: none;
+    display: flex;
     flex-direction: column;
     position: relative;
     left: 0px;
@@ -301,7 +301,6 @@ nav{
 }
 
 .navMobileAtivo{
-    display: flex;
     transition: .3s;
     transform: initial;
     opacity: 1;

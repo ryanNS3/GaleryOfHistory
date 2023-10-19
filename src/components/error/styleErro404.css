@@ -24,14 +24,14 @@
 
 .botao-erro{
     margin-top: 2rem;
-    color: rgb(111, 76, 0);
+    color: rgb(0, 99, 66);
     font-size: 1.3rem;
     text-decoration: underline transparent 0px;
     padding: 0rem 1rem;
 }
 
 .botao-erro:hover{
-    text-decoration: underline rgb(172, 129, 10) 3px;
+    text-decoration: underline aqua 3px;
     transition: 0.6s ease-in-out;
     
 }
