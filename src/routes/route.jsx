@@ -44,9 +44,7 @@ const Rota = () => {
                         </PersonProvider>
 
                         <MovimentosProvider>
-                            <PersonProvider>
-                                <Moviment/>
-                            </PersonProvider>
+                            <Moviment/>
                         </MovimentosProvider>
 
 

@@ -6,7 +6,7 @@ import "../Obra/style.css"
 const Obra = () => {
     const dados = React.useContext(GlobalObras);
     const persona = React.useContext(GlobalPerson);
-    console.log(persona.dados);
+    console.log(persona);
 
 
     if ((dados.dados != null)) {
@@ -62,15 +62,6 @@ const Obra = () => {
     else if (dados.erro) {
         return (
             <Erro />
-        )
-    }
-
-    else if (dados === undefined){
-        return(
-            <div>
-                <p>AAAAA</p>
-            </div>
-
         )
     }
 }

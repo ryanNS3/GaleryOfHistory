@@ -1,3 +1,49 @@
 button{
     border: 2px solid;
 }
+.titulo-movimento{
+    position: relative;   
+    padding: 0rem 1.3rem; 
+}
+
+
+.titulo-movimento::before{
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: rgb(246, 207, 77);
+    border-radius: 0.5rem;
+    left: 5px;
+    position: absolute;
+}
+
+.img-movimento{
+    object-fit: cover;
+    max-width: 80%;
+    
+}
+
+.inner-imgs{
+    position: relative;
+
+}
+.data{
+    font-size: 1.3rem;
+}
+
+.inner-imgs::before{
+    position: absolute;
+    content: "";
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    border: 3px solid #6F4300;
+    z-index: -1;
+    width: 82% ;
+    height: 100%;
+    box-sizing: border-box;
+    
+}
+
+
+

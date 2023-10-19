@@ -10,9 +10,7 @@ import Loading from "../loading/loading";
 import Erro from "../error/error";
 import useMedia from "../../customHooks/useMedia";
 
-
 function NavBar(){
-    
     // contexto
     const dados = useContext(GlobalMovimentos);
     const obras = useContext(GlobalObras)
