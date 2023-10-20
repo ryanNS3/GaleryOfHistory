@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GlobalObras } from "../../context/globalObras";
 import { GlobalPerson } from "../../context/globalPerson";
 import "../Obra/style.css"
+import React from "react";
 
 const Obra = () => {
     const dados = React.useContext(GlobalObras);
@@ -21,6 +22,7 @@ const Obra = () => {
         return (
 
             <div className='corpo' class='w-max h-max m-auto my-10 lg:w-full lg:p-10'>
+                <Link to={"/"} className="button-home">voltar</Link>
                 <p class='text-4xl font-sans border-l border-orange-500 pl-1'>{dados.item}</p>
                 <div class='gap-4 lg:grid lg:grid-cols-2' >
                     <div className='Imagens' class='md:grid'>
