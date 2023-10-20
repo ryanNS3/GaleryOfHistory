@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Erro404 = () =>{
     return( 
-        <>
+        <section className="animacaoEsquerda">
             <h1 className="titulo-erro">Página não encontrada <span>404</span></h1>
             <section className="boxErro">
                 <div>
@@ -20,7 +20,7 @@ const Erro404 = () =>{
 
             </section>
 
-        </>
+        </section>
 
 
     )
