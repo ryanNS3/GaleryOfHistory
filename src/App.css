@@ -9,6 +9,23 @@ body{
 }
 
 
+/* Animações gerais */
+.animacaoEsquerda{
+    animation: animaEsquer 0.5s forwards 0.3s ;
+    transform: translateX(-40px);
+    opacity: 0;
+}
+
+@keyframes animaEsquer{
+    to{
+        opacity: 1;
+        transform: initial;
+
+    }
+
+}
+
+
 
 /* responsivo */
 
