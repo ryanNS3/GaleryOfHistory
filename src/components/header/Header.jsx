@@ -65,7 +65,7 @@ function Header() {
                     <button className="button-movimentos" aria-label="navegação ir a movimentos ">
                         <Link className="link-movimentos"
                         activeClass="active"
-                        to="box-personalidades"
+                        to="movimentos"
                         spy={true}
                         smooth={true}
                         offset={-70}

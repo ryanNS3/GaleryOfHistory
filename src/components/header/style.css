@@ -143,9 +143,10 @@
 .decoradorx::after{
     content: "";
  
-    width: 10%;
+    width: 14.5%;
     height: 4px;
-    left: 1px;
+    left: -1px;
+    top: 3px;
     background-color: #000;
     position: absolute;
     transition: ease-in-out 0.6s;
@@ -156,9 +157,9 @@
     content: "";
     display: block;
     position: absolute;
-    width: 10%;
+    width: 13%;
     height: 4px;
-    left: 247px;
+    left: 242px;
     background-color: #000000;
     transition: ease-in-out 0.6s;
     
@@ -167,11 +168,11 @@
 .decoradory::after{
     content: "";
     position: absolute;
-    width: 1.3%;
-    height: 33px;
+    width: 1.5%;
+    height: 30px;
     background-color: #000;
     left: 275px;
-    top: 23px;
+    top: 26px;
     transition: ease-in-out 0.6s;
     
 }
@@ -179,10 +180,10 @@
 .decoradory::before{
     content: "";
     position: absolute;
-    width: 1.3%;
-    height: 33px;
+    width: 1.5%;
+    height: 30px;
     background-color: #000000;
-    left: -1px;
+    left: -2px;
     transition: ease-in-out 0.6s;
 
 }
@@ -224,6 +225,7 @@
     }
     .decoradorx::after{
         width: 100%;
+        left: 1px;
     }
 
     .decoradorx::before{
@@ -232,13 +234,13 @@
     }
 
     .decoradory::after{
-        height: 52px;
-        top: 4.5px
+        height: 53.4px;
+        top: 3.5px
         
     }
     .decoradory::before{
-        height: 52px;
-        top: 4.5px;
+        height: 54.4px;
+        top: 2.8px;
 
     }
 

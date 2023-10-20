@@ -24,7 +24,7 @@ function Personalidades(){
     React.useEffect(() =>{
         setwidth(carroussel.current?.scrollWidth - carroussel.current?.offsetWidth)
     })
-
+    
   
 if (dados.dados != null){
     return(

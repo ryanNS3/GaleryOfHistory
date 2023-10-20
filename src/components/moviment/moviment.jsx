@@ -19,6 +19,7 @@ import Erro from "../error/error";
 export default function Moviment() {
     Aos.init()
     const dados = useContext(GlobalMovimentos);
+    console.log(dados.dados)
 
     if (dados.dados != null) {
         const [indice, setIndice] = useState(0);
@@ -62,12 +63,14 @@ export default function Moviment() {
         useEffect(() => {
             const interval = setInterval(() => {
                 pass('+');
-            }, 5000);
+            }, 2000);
 
             return () => clearInterval(interval);
         }, [indice]);
+        
         return (
-            <article className='body' class='w-max h-max m-auto my-10 lg:w-full lg:p-2 animacaoEsquerda'>
+            <article className='body' class='w-max h-max m-auto my-10 lg:w-full lg:p-2 animacaoEsquerda movimentos'>
+
                 <div class='gap-0.8 lg:grid lg:grid-cols-2'>
 
 
@@ -79,20 +82,30 @@ export default function Moviment() {
                                 src={dados.dados[indice].obras[0].linkFoto}
                                 alt=''
                             />
-                            <img
-                                className='w-6 h-6 absolute right-4 bottom-4 hover:border-2 hover:border-orange-200 hover:rounded-full' onClick={() => alert('Esse botão irá se auto destruir.')}
-                                src={informacao}
-                                alt=''
-                            />
+                            <button>
+                             <Link to={`/obras/${dados.dados[indice].nomeMovimento}`}>
+                                <img
+                                        className='w-6 h-6 absolute right-25 bottom-4 hover:border-2 hover:border-orange-200 hover:rounded-full' 
+                                        src={informacao}
+                                        alt=''
+                                    />
+                    
+                            
+                            </Link>
+
+                            </button>
+                               
                         </div>
                     </div>
 
-                    <div className='Informacoes' class='mt-10 md:mt-6 '>
-                        <div class='hidden gap-1 justify-end md:flex' id='blocos'>
-                            {quadrado.map((item, index) => <div key={index} class={item}></div>)}
+                    <div className='Informacoes mt-3'>
+
+                        <div class='hidden gap-1 justify-end md:flex mg-10 mr-14' id='blocos'>
+                            {quadrado.map((item, index) => <button key={index} class={item}></button>)}
                         </div>
+
                         <div className='body-informação' class='lg:grid'>
-                            <div className='flex gap-4 items-center md:mt-6  md:justify-between md:gap-0 md:p-5'>
+                            <div className='flex gap-8 items-center md:mt-6   md:gap-6 md:p-5'>
                                 <div className='w-12 h-12 rounded-full bg-gray-500 relative md:w-16 md:h-16'>
                                     <img
                                         className='w-12 h-12 rounded-full md:w-16 md:h-16 '
@@ -100,16 +113,20 @@ export default function Moviment() {
                                         alt=''
                                     />
                                 </div>
-                                <p className='text-md md:text-2xl text-left'>Van gogh e mais 3 artista.</p>
+                                <p className='text-md md:text-2xl text-left mr-14'>Van gogh e mais 3 artistas.</p>
                                 <p className='border-2 border-orange-300 p-2 text-md md:text-2xl rounded-lg data'>{dados.dados[indice].dataTermino}</p>
                             </div>
 
                             <article className='descricao pt-5 items-center md:m-0  md:pt-10 md:px-5 ' >
+
                                 <div className='w-8 h-4 bg-orange-300 relative md:w-16 md:h-6'>
                                     <h3 className='text-lg md:text-3xl absolute bottom-[.5px]'>Descrição</h3>
                                 </div>
-                                <p className='text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3'>{dados.dados[indice].descricaoMovimento}</p>
+
+                                {/* text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  */}
+                                <p className='text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  descricao-movi'>{dados.dados[indice].descricaoMovimento}</p>
                             </article>
+
                             <div className='btns flex justify-between'>
                                 <div className='w-12 h-5 my-6 border-2 ml-2 border-orange-300 rounded hover:bg-orange-100 md:w-20 md:h-12'>
                                     <button className="w-12 h-5 ml-1 mt-1 bg-white border-2 border-orange-300 rounded align-middle hover:bg-orange-100 md:w-20 md:h-12" onClick={() => pass('-')} type="button">
@@ -119,7 +136,9 @@ export default function Moviment() {
                                             alt=''
                                         />
                                     </button>
+
                                 </div>
+
                                 <div className='w-12 h-5 my-6 border-2 mr-3 border-orange-300 rounded  hover:bg-orange-100 md:w-20 md:h-12'>
                                     <button className="w-12 h-5 ml-1 mt-1 bg-white border-2 border-orange-300 rounded align-middle hover:bg-orange-100 md:w-20 md:h-12" onClick={() => pass('+')} type="button">
                                         <img

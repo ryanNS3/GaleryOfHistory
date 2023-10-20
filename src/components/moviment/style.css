@@ -17,7 +17,7 @@ button{
     content: "";
     width: 5px;
     height: 80%;
-    background-color: rgb(246, 207, 77);
+    background-color: #FFD390;
     border-radius: 0.5rem;
     left: 5px;
     position: absolute;
@@ -45,11 +45,56 @@ button{
     border-radius: 10px;
     border: 3px solid #6F4300;
     z-index: -1;
-    width: 82% ;
-    height: 100%;
+    width: 82%  ;
+    height: 100% ;
     box-sizing: border-box;
     
 }
 
 
 
+.descricao-movi{
+    border-left: solid 5px #FFD390 ;
+    margin-top: 1rem;
+    background-color: #FFF3E1;
+    border-radius: 0.5rem;
+    max-width: 80% !important;
+    max-height: 80% !important;
+    min-width: 50% !important;
+    min-height: 50% !important;
+    overflow-y:scroll;
+    cursor: grab;
+
+}
+
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(120, 120, 120);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border-radius: 3px solid rgb(65, 65, 65);  /* creates padding around scroll thumb */
+  }
+
+.descricao-movi::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .descricao-movi::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+  }
+  
+  .descricao-movi::-webkit-scrollbar-thumb {
+    background-color: rgb(202, 175, 0);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border-radius: 3px solid rgb(65, 65, 65);  /* creates padding around scroll thumb */
+  }
+.decorador-descricao{
+    background-color: #FFD390;
+}

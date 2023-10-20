@@ -22,15 +22,20 @@ const Obra = () => {
         return (
 
             <div className='corpo' class='w-max h-max m-auto my-10 lg:w-full lg:p-10'>
+
                 <Link to={"/"} className="button-home">voltar</Link>
                 <p class='text-4xl font-sans border-l border-orange-500 pl-1'>{dados.item}</p>
+
                 <div class='gap-4 lg:grid lg:grid-cols-2' >
+
                     <div className='Imagens' class='md:grid'>
                         <div class='ml-4 relative w-72 h-[400px] mt-5 border-2 border-blue-900 rounded md:w-full md:h-[600px] md:border-4'>
                             <img id="obra" class='' src={indice.linkFoto} alt={indice.nomeObra} />
                         </div>
                     </div>
+
                     <div className='descricao' class='pt-5 items-center md:m-0 md:pt-10 md:px-5'>
+
                         <div class='md:flex md:items-center	md:justify-between'>
                             <div class='w-12 h-12 rounded-full bg-gray-500 relative md:w-16 md:h-16'>
                                 <img
@@ -39,6 +44,7 @@ const Obra = () => {
                                     alt=''
                                 />
                             </div>
+                            
                             <p class='text-md md:text-2xl'>{indice.fk_nomeArtista}</p>
                             <p class='border-2 border-orange-300 p-2 text-md md:text-2xl'>{indice.ano}</p>
                         </div>
