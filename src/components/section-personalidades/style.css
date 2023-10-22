@@ -7,25 +7,18 @@ section{
 .box-personalidades{
     display: flex;
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     max-width: 80%;
-    
+   
 
 }
 
 
 .titulo-perso{
     position: relative;
-    padding: 8.8rem 2.8rem;
+    padding: 6.8rem 2.8rem;
     background-color: #282828;
-    /* propreidades iniciais para a animação */
-    width: 0%;
-    opacity: 0;
-    animation-name: animacaotitle;
-    animation-duration: 0.8s;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
-   
+    width: 65%;
 }
 
 
@@ -60,13 +53,7 @@ section{
     height: 90%;
     left: 50%;
     top: 20px;
-    transform: translateX(50px);
-    opacity: 0;
-    animation-name: animacaoCarroussel;
-    animation-duration: 0.3s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+   
     
 }
 
@@ -74,7 +61,6 @@ section{
     display: flex;
     justify-items: center;
     margin-left: 2.8rem;
-   
 }
 
 .item{
@@ -108,10 +94,10 @@ section{
     content: "";
     position: absolute;
     width: 5px;
-    height: 44px;
+    height: 45px;
     background-color: #2F2F2F;
-    left: 90px;
-    top: 158px;
+    left: 97px;
+    top: 172px;
 }
 
 
@@ -163,20 +149,6 @@ section{
        width: 100%;
        height: 80%;
        
-    }
-}
-
-@keyframes animacaotitle{
-    to{
-        width: 65%;
-        opacity: 1;
-    }
-}
-
-@keyframes animacaoCarroussel{
-    to{
-        transform: initial;
-        opacity: 1;
     }
 }
 

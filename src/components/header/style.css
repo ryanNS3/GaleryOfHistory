@@ -4,9 +4,9 @@
 .box-header{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 1rem;
+    
     margin-left: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -88,7 +88,7 @@
     z-index: -999;
     top: 55px ;
     right: 0px;
-    animation: animacaoDecorador 0.5s forwards;
+    animation: animacaoDecorador 1s forwards;
 
 }
 
@@ -130,7 +130,6 @@
     position: relative;
     margin-top: 1rem;
     gap: 1rem;
-    border: 0;
     max-width: 30%;
     
 }
@@ -143,10 +142,9 @@
 .decoradorx::after{
     content: "";
  
-    width: 14.5%;
+    width: 10%;
     height: 4px;
-    left: -1px;
-    top: 3px;
+    left: 1px;
     background-color: #000;
     position: absolute;
     transition: ease-in-out 0.6s;
@@ -157,9 +155,9 @@
     content: "";
     display: block;
     position: absolute;
-    width: 13%;
+    width: 10%;
     height: 4px;
-    left: 242px;
+    left: 247px;
     background-color: #000000;
     transition: ease-in-out 0.6s;
     
@@ -168,11 +166,11 @@
 .decoradory::after{
     content: "";
     position: absolute;
-    width: 1.5%;
-    height: 30px;
+    width: 1.3%;
+    height: 33px;
     background-color: #000;
     left: 275px;
-    top: 26px;
+    top: 23px;
     transition: ease-in-out 0.6s;
     
 }
@@ -180,10 +178,10 @@
 .decoradory::before{
     content: "";
     position: absolute;
-    width: 1.5%;
-    height: 30px;
+    width: 1.3%;
+    height: 33px;
     background-color: #000000;
-    left: -2px;
+    left: -1px;
     transition: ease-in-out 0.6s;
 
 }
@@ -225,7 +223,6 @@
     }
     .decoradorx::after{
         width: 100%;
-        left: 1px;
     }
 
     .decoradorx::before{
@@ -234,13 +231,13 @@
     }
 
     .decoradory::after{
-        height: 53.4px;
-        top: 3.5px
+        height: 52px;
+        top: 4.5px
         
     }
     .decoradory::before{
-        height: 54.4px;
-        top: 2.8px;
+        height: 52px;
+        top: 4.5px;
 
     }
 
@@ -251,7 +248,7 @@
     from{
         left : 6px;
         width: 0%;
-        height: 0%;
+        height: 40px;
        
 
     }
@@ -350,11 +347,8 @@
     }
        
     .section-titulo h1 span:first-child{
-        background-size: 135px 60px;
+        background-size: 90px 40px;
            
-    }
-    .nomeObra{
-        font-size: 0.5rem;
     }
         
     
