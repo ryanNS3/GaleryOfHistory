@@ -9,6 +9,7 @@ import Personalidades from "../components/section-personalidades/Personalidades"
 
 import { AnimatePresence } from "framer-motion";
 import Erro404 from "../components/error/error404";
+import Moviment from "../components/moviment/moviment";
 
 
 const Rota = () =>{
@@ -17,7 +18,7 @@ const Rota = () =>{
         <BrowserRouter>
             <Routes>
 
-                <Route path="obra" element={
+                <Route path="obra/:id" element={
                     <MovimentosProvider>
                         <ObrasProvider>
                             <Obra />
@@ -43,6 +44,12 @@ const Rota = () =>{
                   <PersonProvider>
                     <Personalidades />
                   </PersonProvider>
+
+                  <MovimentosProvider>
+                    <ObrasProvider>
+                        <Moviment />
+                    </ObrasProvider>
+                  </MovimentosProvider>
                 
                 </>
             }

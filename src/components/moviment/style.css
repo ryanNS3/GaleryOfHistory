@@ -25,7 +25,7 @@ button{
 
 .img-movimento{
     object-fit: cover;
-    max-width: 80%;
+    width: 80%;
     
 }
 
@@ -54,19 +54,28 @@ button{
 
 
 .descricao-movi{
-    border-left: solid 5px #FFD390 ;
+   border-left: solid 5px #FFD390 ;
     margin-top: 1rem;
     background-color: #FFF3E1;
-    border-radius: 0.5rem;
-    max-width: 80% !important;
+    border-radius: 0.5rem; 
+    max-width: 100% !important;
     max-height: 80% !important;
-    min-width: 50% !important;
+    min-width: 20% !important;
     min-height: 50% !important;
     overflow-y:scroll;
     cursor: grab;
 
 }
 
+.decorador-descri::before{
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 20%;
+  width: 88%;
+  height: 88%;
+  background-color: #FFD390;
+}
 
 body::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */
@@ -82,6 +91,8 @@ body::-webkit-scrollbar {
     border-radius: 3px solid rgb(65, 65, 65);  /* creates padding around scroll thumb */
   }
 
+
+
 .descricao-movi::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */
   }
@@ -91,8 +102,8 @@ body::-webkit-scrollbar {
   }
   
   .descricao-movi::-webkit-scrollbar-thumb {
-    background-color: rgb(202, 175, 0);    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
+    background-color: #FFD390;    /* color of the scroll thumb */
+    /* border-radius: 20px;       roundness of the scroll thumb */
     border-radius: 3px solid rgb(65, 65, 65);  /* creates padding around scroll thumb */
   }
 .decorador-descricao{

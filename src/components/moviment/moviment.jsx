@@ -6,27 +6,25 @@ import informacao from "../../assets/informacoes.png"
 import "../header/style.css"
 import { Link, animateScroll as scroll } from "react-scroll";
 
-// importando a biblioteca de anumação aos
-import "aos"
-import Aos from "aos";
-
 // importando a biblioteca de slides
 import { GlobalMovimentos } from "../../context/globalMovi";
 import Loading from "../loading/loading";
 import Erro from "../error/error";
+import { GlobalObras } from "../../context/globalObras";
 
 
 export default function Moviment() {
-    Aos.init()
+   
     const dados = useContext(GlobalMovimentos);
-    console.log(dados.dados)
+
 
     if (dados.dados != null) {
         const [indice, setIndice] = useState(0);
         const [quadrado, setQuadrado] = useState([]);
+        console.log(dados.dados)
         function pass(op) {
             if (op === '+') {
-                if ((indice < (carrosel.length - 1)) && (indice < 5)) {
+                if ((indice < (5 - 1)) && (indice < 5)) {
                     setIndice(indice + 1);
                 }
                 else {
@@ -46,6 +44,7 @@ export default function Moviment() {
             let cont = 0;
             var animacao = [];
             let div = '';
+
             while (cont !== 5) {
                 if (cont === indice) {
                     div = 'w-6 h-4 bg-orange-200 border border-orange-300 rounded-md md:w-12 md:h-8';
@@ -63,71 +62,61 @@ export default function Moviment() {
         useEffect(() => {
             const interval = setInterval(() => {
                 pass('+');
-            }, 2000);
+            }, 5000);
 
             return () => clearInterval(interval);
         }, [indice]);
-        
         return (
-            <article className='body' class='w-max h-max m-auto my-10 lg:w-full lg:p-2 animacaoEsquerda movimentos'>
+            <article className='grid grid-cols-1 lg:w-full lg:p-2 animacaoEsquerda movimentos'>
+                <div className="grid grid-cols-2 mb-10">
 
-                <div class='gap-0.8 lg:grid lg:grid-cols-2'>
-
-
-                    <div className='Imagens' class='md:grid'>
                         <h3 className='text-4xl font-sans pl-1 titulo-movimento'>{dados.dados[indice].nomeMovimento}</h3>
-                        <div class='ml-2 relative w-72 h-[400px] mt-5 rounded md:w-full md:h-[600px] inner-imgs'>
+                        <div className='hidden gap-1 justify-end md:flex mg-10' id='blocos'>
+                            {quadrado.map((item, index) => <button key={index} className={item}></button>)}
+                        </div>
+                </div>
+
+                <div className='md:gap-3 sm:grid grid-cols-2 '>
+
+
+                    <div className='Imagens md:grid place-self'>
+                        <div className=' max-md:w-64 sm:h-4/5 ml-2 place-self-start relative w-full h-[400px] mt-5 rounded md:w-full md:h-[600px] inner-imgs'>
                             <img
-                                className='w-full h-full absolute  bottom-2 rounded img-movimento'
+                                className='sm:w-42	 sm-h-38  w-92 h-full  bottom-2 rounded img-movimento'
                                 src={dados.dados[indice].obras[0].linkFoto}
                                 alt=''
                             />
-                            <button>
-                             <Link to={`/obras/${dados.dados[indice].nomeMovimento}`}>
-                                <img
-                                        className='w-6 h-6 absolute right-25 bottom-4 hover:border-2 hover:border-orange-200 hover:rounded-full' 
-                                        src={informacao}
-                                        alt=''
-                                    />
-                    
-                            
-                            </Link>
-
-                            </button>
                                
                         </div>
                     </div>
 
-                    <div className='Informacoes mt-3'>
+                    <div className='Informacoes mt-12 sm:mt-0'>
 
-                        <div class='hidden gap-1 justify-end md:flex mg-10 mr-14' id='blocos'>
-                            {quadrado.map((item, index) => <button key={index} class={item}></button>)}
-                        </div>
 
-                        <div className='body-informação' class='lg:grid'>
-                            <div className='flex gap-8 items-center md:mt-6   md:gap-6 md:p-5'>
-                                <div className='w-12 h-12 rounded-full bg-gray-500 relative md:w-16 md:h-16'>
+                        <div className='body-informação grid'>
+                            <div className='flex gap-8 w-full md:gap-6 md:p-5'>
+                                <div className='w-8 h-8 rounded-full bg-gray-500 relative md:w-16 md:h-16'>
                                     <img
-                                        className='w-12 h-12 rounded-full md:w-16 md:h-16 '
+                                        className='  w-8 h-8 rounded-full md:w-16 md:h-16 '
                                         src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx4PGyba3BR8tRfKdfHPoYo-2C6rPO8vWeTCMBo6TTfy02956e'
                                         alt=''
                                     />
                                 </div>
-                                <p className='text-md md:text-2xl text-left mr-14'>Van gogh e mais 3 artistas.</p>
-                                <p className='border-2 border-orange-300 p-2 text-md md:text-2xl rounded-lg data'>{dados.dados[indice].dataTermino}</p>
+                                <p className='text-sm md:text-2xl w-4/6 self-center '>{dados.dados[indice].obras[indice].fk_nomeArtista}</p>
+                                <p className='border-2 border-orange-300 p-2  justify-self-end self-center text-right text-sm md:text-2xl rounded-lg data'>{dados.dados[indice].dataTermino}</p>
                             </div>
 
                             <article className='descricao pt-5 items-center md:m-0  md:pt-10 md:px-5 ' >
 
-                                <div className='w-8 h-4 bg-orange-300 relative md:w-16 md:h-6'>
+                                <div className='decorador-descri w-8 h-4 relative md:w-16 md:h-6'>
                                     <h3 className='text-lg md:text-3xl absolute bottom-[.5px]'>Descrição</h3>
                                 </div>
 
                                 {/* text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  */}
-                                <p className='text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  descricao-movi'>{dados.dados[indice].descricaoMovimento}</p>
+                                <p className='text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  descricao-movi w-full'>{dados.dados[indice].descricaoMovimento}</p>
                             </article>
 
-                            <div className='btns flex justify-between'>
+                            <div className='btns flex md:gap-96	 sm:gap-12 gap-4'>
                                 <div className='w-12 h-5 my-6 border-2 ml-2 border-orange-300 rounded hover:bg-orange-100 md:w-20 md:h-12'>
                                     <button className="w-12 h-5 ml-1 mt-1 bg-white border-2 border-orange-300 rounded align-middle hover:bg-orange-100 md:w-20 md:h-12" onClick={() => pass('-')} type="button">
                                         <img

@@ -6,9 +6,11 @@ import linhaPerso from "../../assets/linhaPerso.svg"
 import circuloPerso from "../../assets/circuloPerso.svg"
 
 // importando o motion
-import { motion, useAnimate  } from "framer-motion";
+import { motion} from "framer-motion";
+
 // importando a varivael global
 import { GlobalPerson } from "../../context/globalPerson";
+
 import Loading from "../loading/loading";
 import Erro from "../error/error";
 
@@ -22,7 +24,7 @@ function Personalidades(){
     React.useEffect(() =>{
         setwidth(carroussel.current?.scrollWidth - carroussel.current?.offsetWidth)
     })
-
+    
   
 if (dados.dados != null){
     return(
