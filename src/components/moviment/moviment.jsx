@@ -113,7 +113,7 @@ export default function Moviment() {
                                 </div>
 
                                 {/* text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  */}
-                                <p className='text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  descricao-movi w-full'>{dados.dados[indice].descricaoMovimento}</p>
+                                <p className='text-xs mt-5 w-72 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl pl-6 pr-6 pt-3 pb-3  descricao-movi w-full'>{dados.dados[indice].descricaoMovimento}</p>
                             </article>
 
                             <div className='btns flex md:gap-96	 sm:gap-12 gap-4'>
