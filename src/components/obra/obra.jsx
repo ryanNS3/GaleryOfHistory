@@ -52,7 +52,7 @@ const Obra = () => {
                     <Link to={"/"} aria-label="botão-voltar" className="button-home relative rounded-xl w-10 border-orange-300  justify-self-start self-center">
                         <img className=" rotate-180 w-10 " src={seta}  alt="seta"/>
                     </Link>
-                    <h1 className='text-4xl pl-1 relative titulo-obra col-span-2'>{dados.item}</h1>
+                    <h1 className='text-5xl pl-1 relative titulo-obra col-span-2'>{dados.item}</h1>
 
                 </section>
 
