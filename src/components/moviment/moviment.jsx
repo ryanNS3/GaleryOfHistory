@@ -70,7 +70,7 @@ export default function Moviment() {
             <article className='grid grid-cols-1 lg:w-full lg:p-2 animacaoEsquerda movimentos'>
                 <div className="grid grid-cols-2 mb-10">
 
-                        <h3 className='text-4xl font-sans pl-1 titulo-movimento'>{dados.dados[indice].nomeMovimento}</h3>
+                        <h3 className='text-4xl font-sans pl-4 titulo-movimento'>{dados.dados[indice].nomeMovimento}</h3>
                         <div className='hidden gap-1 justify-end md:flex mg-10' id='blocos'>
                             {quadrado.map((item, index) => <button key={index} className={item}></button>)}
                         </div>
