@@ -37,7 +37,7 @@ if (dados.dados !== null){
             </div>
 
             <div>
-                <span>Gallery of history</span>
+                <span>Art Gallery</span>
             </div>
 
         </div>

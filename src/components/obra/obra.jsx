@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Link, useParams } from "react-router-dom";
 import { GlobalObras } from "../../context/globalObras";
@@ -29,16 +29,19 @@ const Obra = () => {
     const handleOpen = () => setAbrir(true);
     const handleClose = () => setAbrir(false);
   
-
+    const refcoment = useRef()
 
     const dados = React.useContext(GlobalObras);
     const persona = React.useContext(GlobalPerson);
     const parametros = useParams()
-    console.log(parametros)
+
+
+ 
     dados.setItem(parametros.id)
+
     function handleClick(event){    
-        console.log(event)
-      
+        event.preventDefault();
+        setNota(event.target.innerText)
     }
 
     if ((dados.dados != null)) {
@@ -53,8 +56,8 @@ const Obra = () => {
      
         return (
 
-            <main className='corpo w-max h-max lg:w-full mt-10 animacaoEsquerda'>
-                <section className="grid grid-cols-3 mb-10 justify-between">
+            <main className='corpo lg:w-full mt-10 animacaoEsquerda'>
+                <section className="grid md:grid-cols-3 mb-10 justify-between">
                     <Link to={"/"} aria-label="botão-voltar" className="button-home relative rounded-xl w-10 border-orange-300  justify-self-start self-center">
                         <img className=" rotate-180 w-10 " src={seta}  alt="seta"/>
                     </Link>
@@ -64,15 +67,15 @@ const Obra = () => {
 
                 <div className='gap-4 lg:grid lg:grid-cols-2' >
 
-                    <div className='Imagens md:grid'>
+                    <div className='Imagens md:grid mb-8 sm:mb-0'>
                         <div className='ml-4 relative w-68 h-[400px] mt-5 rounded md:w-full md:h-[600px] decorador-obra'>
-                            <img id="obra" className="rounded w-3/6" src={indice.linkFoto} alt={indice.nomeObra} />
+                            <img id="obra" className="rounded w-full" src={indice.linkFoto} alt={indice.nomeObra} />
                         </div>
                     </div>
 
                     <div className='descricao  pt-5 items-center md:m-0 md:pt-10 md:px-5'>
 
-                        <div className='md:flex md:items-center gap-8	'>
+                        <div className='flex items-center gap-8	flex-wrap sm:flex-nowrap'>
                             <div className='w-12 h-12 rounded-full bg-gray-500 relative md:w-16 md:h-16'>
                                 <img
                                     className='w-12 h-12 rounded-full justify-self-start absolute top-2 left-2 md:w-16 md:h-16'
@@ -115,11 +118,11 @@ const Obra = () => {
                                 
                                 <label className="labelForm" htmlFor="avaliacao">Avalição</label>
                                 <section aria-label="selecione uma das cinco opções" id="avaliacao">
-                                    <button className="botao-avaliacao av1" onClick={handleClick()}>1</button>
-                                    <button className="botao-avaliacao av2" onClick={handleClick}>2</button>
-                                    <button className="botao-avaliacao av3" onClick={handleClick}>3</button>
-                                    <button className="botao-avaliacao av4" onClick={handleClick}>4</button>
-                                    <button className="botao-avaliacao av5" onClick={handleClick}>5</button>
+                                    <button className="botao-avaliacao av1" onClick={handleClick}>1</button>
+                                    <button  className="botao-avaliacao av2" onClick={handleClick}>2</button>
+                                    <button  className="botao-avaliacao av3" onClick={handleClick}>3</button>
+                                    <button  className="botao-avaliacao av4" onClick={handleClick}>4</button>
+                                    <button  className="botao-avaliacao av5" onClick={handleClick}>5</button>
                                 </section>
 
                                 <label htmlFor="comentario"></label>
@@ -144,20 +147,6 @@ const Obra = () => {
             </main>
         )
 
-    }
-
-
-    else if (dados.loading) {
-        return (
-            <Loading />
-
-        )
-    }
-
-    else if (dados.erro) {
-        return (
-            <Erro />
-        )
     }
 }
 

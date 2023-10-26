@@ -21,7 +21,6 @@ export default function Moviment() {
     if (dados.dados != null) {
         const [indice, setIndice] = useState(0);
         const [quadrado, setQuadrado] = useState([]);
-        console.log(dados.dados)
         function pass(op) {
             if (op === '+') {
                 if ((indice < (5 - 1)) && (indice < 5)) {
@@ -84,7 +83,7 @@ export default function Moviment() {
                             <img
                                 className='sm:w-42	 sm-h-38  w-92 h-full  bottom-2 rounded img-movimento'
                                 src={dados.dados[indice].obras[0].linkFoto}
-                                alt=''
+                                alt={`${dados.dados[indice].nomeObra}`}
                             />
                                
                         </div>

@@ -20,7 +20,6 @@ import Erro from "../error/error";
 
 function Header() {
     const dados = useContext(GlobalObras)
-    console.log(dados.dados)
 
     if (dados.dados != null){
         return(
