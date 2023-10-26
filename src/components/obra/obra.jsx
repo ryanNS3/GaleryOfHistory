@@ -22,7 +22,7 @@ const Obra = () => {
     // formulário
     const [nome,setNome] = React.useState("");
     const [nota,setNota] = React.useState("");
-    const [comentario,setComentario] = React.useState("Digite sua opinião aqui");
+    const [comentario,setComentario] = React.useState("");
 
 
     const [abrir, setAbrir] = React.useState(false);
@@ -36,6 +36,10 @@ const Obra = () => {
     const parametros = useParams()
     console.log(parametros)
     dados.setItem(parametros.id)
+    function handleClick(event){    
+        console.log(event)
+      
+    }
 
     if ((dados.dados != null)) {
 
@@ -45,6 +49,8 @@ const Obra = () => {
                 indice = item;
             }
         })
+
+     
         return (
 
             <main className='corpo w-max h-max lg:w-full mt-10 animacaoEsquerda'>
@@ -64,7 +70,7 @@ const Obra = () => {
                         </div>
                     </div>
 
-                    <div className='descricao pt-5 items-center md:m-0 md:pt-10 md:px-5'>
+                    <div className='descricao  pt-5 items-center md:m-0 md:pt-10 md:px-5'>
 
                         <div className='md:flex md:items-center gap-8	'>
                             <div className='w-12 h-12 rounded-full bg-gray-500 relative md:w-16 md:h-16'>
@@ -82,7 +88,7 @@ const Obra = () => {
                         <div className='w-8 h-4 bg-orange-300 relative mt-10 md:w-16 md:h-6'>
                             <h2 className='text-lg md:text-3xl absolute bottom-[.5px]'>Descrição</h2>
                         </div>
-                        <p className='text-xs mt-5 w-72 bg-orange-200 md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl p-4 descricao-obra'>{indice.descricao}</p>
+                        <p className='text-xs mt-5 w-72  md:w-96 lg:w-full md:h-80 md:text-base xl:text-xl p-4 descricao-obra'>{indice.descricao}</p>
                         <button onClick={handleOpen} className="adicionarComentario"><img src={adicionarComent} alt="Adiconar comenário"/> <p>Comentário</p></button>
                         <Modal
                         open={abrir}
@@ -96,7 +102,7 @@ const Obra = () => {
 
                             <article className="titulo-modal">
                                 <Typography id="modal-modal-title" variant="h3" component="h2">
-                                Adiconar comentário
+                                Adicionar comentário
                                 </Typography>
                                 <button onClick={handleClose}><img src={sair} alt="botão-sair-modal"/></button>
 
@@ -109,15 +115,21 @@ const Obra = () => {
                                 
                                 <label className="labelForm" htmlFor="avaliacao">Avalição</label>
                                 <section aria-label="selecione uma das cinco opções" id="avaliacao">
-                                    <button className="botao-avaliacao av1">1</button>
-                                    <button className="botao-avaliacao av2">2</button>
-                                    <button className="botao-avaliacao av3">3</button>
-                                    <button className="botao-avaliacao av4">4</button>
-                                    <button className="botao-avaliacao av5">5</button>
+                                    <button className="botao-avaliacao av1" onClick={handleClick()}>1</button>
+                                    <button className="botao-avaliacao av2" onClick={handleClick}>2</button>
+                                    <button className="botao-avaliacao av3" onClick={handleClick}>3</button>
+                                    <button className="botao-avaliacao av4" onClick={handleClick}>4</button>
+                                    <button className="botao-avaliacao av5" onClick={handleClick}>5</button>
                                 </section>
 
                                 <label htmlFor="comentario"></label>
-                                <input className="textForm" type="text" id="comentario" value={comentario} onChange={(event) => setComentario(event.target.value)} />
+                                <input className="textForm" type="text" placeholder="Expresse sua opinião aqui" id="comentario" value={comentario} onChange={(event) => setComentario(event.target.value)} />
+                                <button className="botao-box">
+                                    <button className="botao-enviar">Enviar
+                                        <span className="seta-enviar"></span>
+                                    </button>
+
+                                </button>
 
                             </form>
 
