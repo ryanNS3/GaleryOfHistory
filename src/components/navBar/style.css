@@ -59,9 +59,14 @@ nav .logotipo div span{
 nav{
     flex-wrap: wrap;
     padding: 1rem;
-    margin-bottom: 5.5rem;
+    margin-bottom: 2.5rem;
+    gap: 1rem;
 
 }
+.logotipo{
+    gap: 1.5rem;
+}
+
 
 .box-botton{
     display: grid;
@@ -70,11 +75,12 @@ nav{
     position: relative;
     height: 25px;
     margin-bottom: 1rem;
+    
 }
 
 /* fabriacando as seta do menu */
 .seta{
-   position: relative;
+    position: relative;
 }
 
 .seta::after{
@@ -102,8 +108,9 @@ nav{
 
 /* estilizando o menu */
 .link-menu{
+    position: relative;
     padding: 1rem;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'poppins', serif;
     color: black;
     white-space: nowrap;
 }
@@ -113,23 +120,31 @@ nav{
     position: absolute;
     display: none;
     flex-wrap: wrap;
+    flex-direction: column;
     top: 50px;
     place-items: start;
-    gap: 0.5rem;
+    gap: 0.8rem;
     border-radius: 10px;
-    background-color: #f3f3f3;
-    z-index: 200;
+    background-color: #ffffff86;
+    backdrop-filter: blur(8px);
+    z-index: 9999;
     padding: 0.5rem;
-
+    
+    
+    
+    
 }
 
 
 .drop-Menu li a{
     font-size: 1rem;
+    font-family: poppins;
+    z-index: 9999999;
 
 }
+
 .drop-Menu li a:hover{
-    color: #d3a200;
+    color: #816300;
 }
 
 
@@ -139,7 +154,7 @@ nav{
     top:5px;
     left: 8px;
     content: "";
-    width: 3px;
+    width: 4px;
     height: 0px;
     background-color: rgb(0, 0, 0);
     transition: 0.5s ease-in-out;
@@ -147,13 +162,13 @@ nav{
 }
 
 .box-botton::after{
+    content: "";
     display: block;
     position: absolute;
     top: 13px;
     left: -1px;
-    content: "";
     width: 0px;
-    height: 3px;
+    height: 3.5px;
     background-color: rgb(0, 0, 0);
     transition: 0.5s ease-in-out;
 }
@@ -162,11 +177,14 @@ nav{
 
 /* animações ao hover */
 
-.box-botton:hover{
+.box-botton:hover,
+.box-botton:focus{
     &::after{width: 85%;};
     &::before{height: 30px; };
     .drop-Menu{
         display: flex;
+      
+        
     }
 
 
@@ -200,3 +218,97 @@ nav{
 
 @keyframes animacaoSeta1{from {top:5px}   to {top:18px}}
 @keyframes animacaoSeta{from  {top: 0px;} to {top:15px;}}
+
+
+/* responsivo */
+
+/* media */
+@media (min-width: 1600px){
+    .link-menu{
+        font-size: 1.8rem;
+    }
+    
+    .drop-Menu li a{
+        font-size: 1.5rem;
+
+    }
+}
+
+@media(max-width: 901px){
+
+    .box-botton::before{
+        display: none;
+    }
+    nav{
+        justify-content: center;
+    }
+
+}
+
+/* menu Mobile */
+
+.botaoMobile{
+    display: flex;
+    place-self: start end;
+    padding: 1.5rem;
+    justify-content: end;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+.botaoMobile::after{
+    content: "";
+    display: block;
+    width: 1.2rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #000000;
+    box-shadow: 0 6px #000000 , 0 -6px #000000;
+    transition: 0.4s;
+}
+
+.botaoMobile:focus,
+.botaoMobile:hover{
+    background-color: #000000;
+    
+    &::after{
+        background-color: #ffffff;
+        box-shadow: 0 8px #ffffff , 0 -8px #ffffff;
+        
+    }
+    
+}
+
+.botaoAtivo::after{
+    transform: rotate(90deg);
+    box-shadow: 0 8px #ffffff , 0 -8px #ffffff;
+    width: 4px;
+    height: 4px;
+    box-shadow: 0 8px #000000, 0 -8px #ffffff;
+}
+
+.box-lista-mobile{
+    display: none;
+    flex-direction: column;
+    position: relative;
+    left: 0px;
+   
+    gap: 1rem;
+    transform: translateX(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navMobileAtivo{
+    display: flex;
+    transition: .3s;
+    transform: initial;
+    opacity: 1;
+    pointer-events: initial;
+    z-index: 99999;
+    
+}
+.box-lista-mobile li a:hover{
+    color: #816300;
+}

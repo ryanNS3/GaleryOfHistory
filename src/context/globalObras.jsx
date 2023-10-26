@@ -8,17 +8,35 @@ export const GlobalObras = React.createContext();
 export const ObrasProvider = ({children}) =>{
     // utlizando a custom hook
     const {dados, loading, erro, requesicao} = useAxios();
-    const [obras,setObras] = React.useState([]);
+    const [obras,setObras] = React.useState()
     
-useEffect(()=>{
-    requesicao('https://hungry-coveralls-dog.cyclic.app/obra/todos')
-}, [])
 
-    dados ? setObras[dados] : setObras[null]
-    console.log(dados)
+
+    const [item,setItem] = React.useState(null)
+
+    function handleClick({target}){
+        setItem(target.innerText)
+    }
+    
+    if(item !== null){
+        useEffect(()=>{
+            
+                requesicao(`https://hungry-coveralls-dog.cyclic.app/obra/${item}`)
+                
+            
+        }, [item])
+    }
+    if (item == null){
+        useEffect(() =>{
+            requesicao(`https://hungry-coveralls-dog.cyclic.app/obra/todos`)
+        }, [])
+
+    }
+    
+    
    return(
     
-    <GlobalObras.Provider value={{obras,loading,erro}}>
+    <GlobalObras.Provider value={{dados,loading,erro,setItem,item,handleClick,obras}}>
         {children}
     </GlobalObras.Provider>
    )
@@ -26,3 +44,4 @@ useEffect(()=>{
    
    
 }
+
