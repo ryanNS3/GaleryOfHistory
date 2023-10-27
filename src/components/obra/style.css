@@ -1,8 +1,11 @@
 #obra{
     width: 80%;
+    object-fit: cover;
     height: 100%;
 }
-
+.corpo{
+    max-width: 90%;
+}
 .titulo-obra{
     color: #000 !important;
     font-size: 3rem !important;
@@ -310,10 +313,97 @@
         transform: initial;
     }
 }
+.box-titulo-coment{
+    margin-top: 8rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+.titulo-coment{
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.titulo-coment img{
+    max-width: 50%;
+}
+
+.titulo-coment::before{
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 22px;
+    width: 35%;
+    height: 30%;
+    z-index: -1;
+    background-color: #FFD390;
+}
 
 
+.section-coments{
+    max-width: 100%;
+    margin-bottom: 3rem;
+}
+.box-coments{
+    margin-left: 6rem;
+    width: 90vw;
+    overflow: hidden;
+}
 
+.coments{
+    cursor: grab;
+    overflow: hidden;
+    position: absolute;
+    background-color: #4E4E4E;
+    width: 80%;
+    height: 90%;
+    left: 50%;
+    top: 20px;
+    margin-bottom: 2rem;
+}
+.innerComensts{
+    display: flex;
+    gap: 3.5rem;
+    justify-items: center;
+    
+}
+.comentario{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    min-height: 210px;
+    min-width: 350px;
+    background-color: #2F2F2F;
+    padding: 1rem;
+    color: white;
+    justify-self: center;
+}
+.nome-coment{
+    display: grid;
+    align-items: center;
+    margin-bottom: 2rem;
+    grid-template-columns: 1fr 1fr;
+}
+.nome-coment h4{
+    font-size: 2rem;
+}
+.nome-coment div{
+    display: flex;
+    justify-self: end;
+}
 
+.txt-coment{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.txt-coment p{
+    max-width: 100%;
+    color: #ffffff80;
+    word-break: break-all;
+    text-wrap:wrap;
+}
 body::-webkit-scrollbar {
     width: 5px;               /* width of the entire scrollbar */
   }
@@ -330,8 +420,27 @@ body::-webkit-scrollbar {
 
 
 
+.comentario::-webkit-scrollbar {
+    width: 8px;  
+    border-radius: 5px;             /* width of the entire scrollbar */
+}
+
+.comentario::-webkit-scrollbar-track {
+     
+    background: rgb(255, 255, 255);        /* color of the tracking area */
+  }
+  
+  .comentario::-webkit-scrollbar-thumb {
+    background-color: #646464; 
+    border-radius: 20px;       
+    border-radius: 8px solid rgb(65, 65, 65); 
+  }
+
+
+
 .inner-modal::-webkit-scrollbar {
-    width: 5px;               /* width of the entire scrollbar */
+    width: 8px;  
+    border-radius: 5px;             /* width of the entire scrollbar */
   }
   
   .inner-modal::-webkit-scrollbar-track {
@@ -341,7 +450,7 @@ body::-webkit-scrollbar {
   .inner-modal::-webkit-scrollbar-thumb {
     background-color: #646464;    /* color of the scroll thumb */
     /* border-radius: 20px;       roundness of the scroll thumb */
-    border-radius: 3px solid rgb(65, 65, 65);  /* creates padding around scroll thumb */
+    border-radius: 5px solid rgb(65, 65, 65);  /* creates padding around scroll thumb */
   }
 
 
@@ -351,5 +460,20 @@ body::-webkit-scrollbar {
 @keyframes animacao-titulo-obra{
     to{
         width: 95%;
+    }
+}
+
+
+@media(max-width: 930px){
+    .innerComensts{
+        flex-wrap: wrap;
+    }
+    .inner-modal{
+        width: 100%;
+    }
+
+    .box-coments{
+        overflow: none;
+        margin-left: 2rem;
     }
 }
